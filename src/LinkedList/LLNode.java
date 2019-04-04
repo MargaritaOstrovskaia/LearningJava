@@ -1,10 +1,10 @@
 package LinkedList;
 
-public class Node {
+public class LLNode {
 	int value;
-	Node nextNode;
+	LLNode nextNode;
 	
-	Node(int value, Node nextNode) {
+	LLNode(int value, LLNode nextNode) {
 		this.value = value;
 		this.nextNode = nextNode;
 	}

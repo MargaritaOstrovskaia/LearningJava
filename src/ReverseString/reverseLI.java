@@ -4,7 +4,7 @@ import java.util.*;
 
 /* Method: Reverse a String using ListIterator
 	1. We copy String contents to an object of ArrayList.
-	2. We create a ListIterator object by using the listIterator() method on the LinkedList object.
+	2. We create a ListIterator object by using the listIterator() method on the LList object.
 	3. ListIterator object is used to iterate over the list.
 	4. ListIterator object helps us to iterate over the reversed list and print it one by one to the output screen.
 */

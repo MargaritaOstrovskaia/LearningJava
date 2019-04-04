@@ -1,14 +1,14 @@
 package LinkedList;
 
-public class LinkedList {
-	static Node firstNode;
+public class LList {
+	static LLNode firstNode;
 	
-	LinkedList(Node firstNode) {
+	LList(LLNode firstNode) {
 		this.firstNode = firstNode;
 	}
 	
 	static int getCount() {
-		Node temp = firstNode;
+		LLNode temp = firstNode;
 		int count = 1;//
 		
 		while (temp.nextNode != null)
@@ -20,23 +20,23 @@ public class LinkedList {
 		return count;
 	}
 	
-	void insertNode(Node node) {
-		Node finishNode = lastNode();
+	void insertNode(LLNode node) {
+		LLNode finishNode = lastNode();
 		finishNode.nextNode = node;
 	}
 	
-	static boolean insertNodeByIndex(Node node, int index) {
+	static boolean insertNodeByIndex(LLNode node, int index) {
 		int count = getCount() - 1;
 		
 		if (count >= index) {
 			
-			Node temp = firstNode;
+			LLNode temp = firstNode;
 	
 			for(int i=1; i<index; i++) {
 				temp = temp.nextNode;
 			}
 			
-			Node next = temp.nextNode;
+			LLNode next = temp.nextNode;
 			temp.nextNode = node;
 			node.nextNode = next;
 			
@@ -46,10 +46,10 @@ public class LinkedList {
 			return false;
 	}
 	
-	static boolean deleteNode(Node node) {
-		Node temp = firstNode;
+	static boolean deleteNode(LLNode node) {
+		LLNode temp = firstNode;
 		boolean result = false;
-		Node preNode = null;
+		LLNode preNode = null;
 		
 		while (temp.nextNode != null)
 		{
@@ -76,7 +76,7 @@ public class LinkedList {
 	}
 	
 	static boolean deleteNodeByIndex(int index) {
-		Node preNode = null;
+		LLNode preNode = null;
 		
 		for(int i=0; i<=index; i++) {
 			if(i==index) { // delete
@@ -99,9 +99,9 @@ public class LinkedList {
 	}
 	
 	static void reverseList() {
-		Node prev = null;
-		Node temp = firstNode;
-		Node next = temp.nextNode;
+		LLNode prev = null;
+		LLNode temp = firstNode;
+		LLNode next = temp.nextNode;
 		
 		do
 		{
@@ -120,8 +120,8 @@ public class LinkedList {
 	// is it loop?
 	static boolean hasLoop() {
 		
-		Node temp1 = firstNode;
-		Node temp2 = null;
+		LLNode temp1 = firstNode;
+		LLNode temp2 = null;
 		
 		if (firstNode.nextNode != null & firstNode.nextNode.nextNode != null)
 			temp2 = firstNode.nextNode.nextNode;
@@ -140,7 +140,7 @@ public class LinkedList {
 	}
 	
 	void printList(String str) {
-		Node temp = firstNode;
+		LLNode temp = firstNode;
 		System.out.print(str);
 		
 		do {
@@ -152,8 +152,8 @@ public class LinkedList {
 	}
 	
 	// find last list node
-	private Node lastNode() {
-		Node temp = firstNode;
+	private LLNode lastNode() {
+		LLNode temp = firstNode;
 		
 		while (temp.nextNode != null) {
 			temp = temp.nextNode;
